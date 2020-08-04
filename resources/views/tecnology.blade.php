@@ -146,7 +146,7 @@
                                             <p class="white-text text-center">PHP</p>
                                         </div>
                                         <div class="progress">
-										  <div class="progress-bar php" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+										  <div class="progress-bar php" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
 										</div>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@
                                             <p class="white-text text-center">Laravel</p>
                                         </div>
                                           <div class="progress">
-										  <div class="progress-bar laravel" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+										  <div class="progress-bar laravel" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
 										</div>
                                     </div>
                                 </div>
