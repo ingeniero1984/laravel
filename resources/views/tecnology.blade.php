@@ -12,7 +12,7 @@
             <br />
 
             <div class="card-deck">
-                <div class="card mb-4">
+                <div class="card mb-4 shadow">
                     <div class="view overlay">
                         <img class="card-img-top" src="/img/frontend.svg" />
                         <a href="#!">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-4">
+                <div class="card mb-4 shadow">
                     <div class="view overlay">
                         <img class="card-img-top" src="/img/web-1.svg" />
                         <a href="#!">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-4">
+                <div class="card mb-4 shadow">
                     <div class="view overlay">
                         <img class="card-img-top" src="/img/git.svg" width="200" height="200" />
                         <a href="#!">
