@@ -14,4 +14,4 @@ Route::view('/contacto', 'contact')->name('contact');
 
 Route::post('contact', 'MessageController@store')->name('message.store');
 
-//Auth::routes(['register' => false]);
+Auth::routes(['register' => false]);
