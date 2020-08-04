@@ -1,0 +1,89 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.h-screen {
+	height: 100vh;
+}
+
+.navbar-brand {
+	color: #ffffff !important;	
+}
+
+.mundo {
+	font-weight: bold;
+	font-size: 300%;
+}
+
+.about {
+	text-align: justify;
+}
+
+#card {
+	width: 7rem;
+}
+
+.tw-ic:hover {
+	color: #1DA1F2;
+}
+
+.li-ic:hover {
+	color: #0077B5;
+}
+
+.mail-ic:hover {
+	color: #3ABFE6;
+}
+
+.git-ic:hover {
+	color: #ffffff;
+}
+
+.bootstrap {
+	background-color: #563D7C;
+}
+
+.angular {
+	background-color: #DD0031;
+}
+
+.jquery {
+	background-color: #0769AD;
+}
+
+.js {
+	background-color: #F7DF1E;
+}
+
+.html5 {
+	background-color: #FF7F50;
+}
+
+.php {
+	background-color: #777BB4;
+}
+
+.laravel {
+	background-color: #FF2D20;
+}
+
+.wordpress {
+	background-color: #21759B;
+}
+
+.mysql {
+	background-color: #4479A1;
+}
+
+.mongo {
+	background-color: #47A248;
+}
+
+.sql {
+	background-color: #CC2927;
+}
