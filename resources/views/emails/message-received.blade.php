@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Mensaje recibido</title>
-</head>
-	<body>
-			
-		<p>Recibiste un mensaje de: {{ $msg['name'] }} - {{ $msg['email'] }}</p>
-		<p><strong>Asunto:</strong> {{ $msg['subject'] }}</p>
-		<p><strong>Contenido:</strong> {{ $msg['content'] }}</p>
+@component('mail::message')
 
-	</body>
-</html>
+# Mensaje recibido
+
+**Remitente:** {{ $msg['name'] }} - {{ $msg['email'] }}
+
+**Asunto:** {{ $msg['subject'] }}
+
+<br>
+
+{{ $msg['content'] }}
+
+<br>
+
+Thanks,
+
+<br>
+{{ config('app.name') }}
+
+@endcomponent
