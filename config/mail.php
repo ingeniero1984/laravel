@@ -133,4 +133,8 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    'mail_contact_name' => env('MAIL_CONTACT_NAME', 'Lermy Ferrer Peralta'),
+
+    'mail_contact_address' => env('MAIL_CONTACT_ADDRESS' , 'ingeniero.lermy84@gmail.com'),
+
 ];

@@ -19,7 +19,8 @@ class MessageController extends Controller
     		'name.required' => __('I need your name')
     	]);
 
-    	Mail::to('ingeniero.lermy84@gmail.com')->send(new MessageReceived($message));
+    	Mail::to(config('mail.mail_contact_address'), config('mail.mail_contact_name'))
+            ->send(new MessageReceived($message));
 
     	return back()->with('toast_success', 'Recibimos tu correo, te responderemos lo más pronto.');
     }

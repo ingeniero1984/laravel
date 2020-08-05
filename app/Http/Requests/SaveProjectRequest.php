@@ -27,7 +27,7 @@ class SaveProjectRequest extends FormRequest
         return [
             
             'title'       => 'required',
-            'url'         => ['required', 'unique:projects, url'],
+            'url'         => 'required|unique:projects,url',
             'description' => 'required',
 
         ];
