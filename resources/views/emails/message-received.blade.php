@@ -1,20 +1,17 @@
 @component('mail::message')
-
 # Mensaje recibido
 
-**Remitente:** {{ $msg['name'] }} - {{ $msg['email'] }}
+**{{ $msg['subject'] }}**
 
-**Asunto:** {{ $msg['subject'] }}
+{{ $msg['content'] }}<br><br>
 
-<br>
+**Gracias**,<br><br>
 
-{{ $msg['content'] }}
+**Atentamente,**<br><br>
 
-<br>
+{{ $msg['name'] }}<br>
 
-Thanks,
+{{ $msg['email'] }}<br><br>
 
-<br>
 {{ config('app.name') }}
-
 @endcomponent
