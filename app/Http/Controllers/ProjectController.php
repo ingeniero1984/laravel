@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SaveProjectRequest;
 
@@ -77,13 +76,6 @@ class ProjectController extends Controller
             $project->image = $request->file('image')->store('image');
 
             $project->save();
-
-            //intervention image
-            $image = Image::make(storage_path(Storage::get($project->image)));
-
-            $image->widen(600)->encode();
-
-            storage::put($project->image, (string) $image);
 
         } else {
 
