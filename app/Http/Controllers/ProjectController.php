@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SaveProjectRequest;
 
 class ProjectController extends Controller
@@ -36,13 +38,18 @@ class ProjectController extends Controller
 
 
     public function create() {
+
     	return view('projects.create');
     } 
 
 
     public function store(SaveProjectRequest $request) {
 
-    	Project::create($request->validated());
+    	$project = new Project($request->validated());
+
+        $project->image = $request->file('image')->store('image');
+
+        $project->save();
 
     	return redirect()->route('projects.index')->with('toast_success', 'El proyecto fue creado correctamente.');
     }
@@ -58,9 +65,31 @@ class ProjectController extends Controller
     }
 
 
-    public function update(Project $project, SaveProjectRequest $request) {
+    public function update(Project $project, SaveProjectRequest $request)
+    {
 
-    	$project->update($request->validated());
+        if($request->hasfile('image')) {
+
+            storage::delete($project->image);
+
+            $project->fill($request->validated());
+
+            $project->image = $request->file('image')->store('image');
+
+            $project->save();
+
+            //intervention image
+            $image = Image::make(storage_path(Storage::get($project->image)));
+
+            $image->widen(600)->encode();
+
+            storage::put($project->image, (string) $image);
+
+        } else {
+
+            $project->update(array_filter($request->validated()));
+
+        }
 
     	return redirect()->route('projects.show', $project)->with('toast_success', 'El proyecto fue actualizado correctamente.');
 
@@ -68,6 +97,8 @@ class ProjectController extends Controller
 
 
     public function destroy(Project $project) {
+
+        storage::delete($project->image);
 
     	$project->delete();
 

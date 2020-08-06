@@ -44,4 +44,14 @@
 
 	</div>
 
+	<div class="custom-file">
+
+		<input type="file" name="image" class="custom-file-input" id="customFile">
+
+		<label class="custom-file-label" for="customFile">Cargar imagen</label>
+		
+	</div>
+	
 </div>
+
+<br>
