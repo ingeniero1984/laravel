@@ -7,7 +7,7 @@
 
             <img class="card-img-top"
                 style="height: 150px; object-fit: cover"
-                src="/storage/{{ $project->image }}" 
+                src="/storage/{{ $project->images }}" 
                 alt="{{ $project->title }}" />
             @endif
 
