@@ -30,7 +30,8 @@
 
 					@if($project->image)
 
-						<img class="card-img-top" 
+						<img class="card-img-top"
+						style="height: 150px; object-fit: cover"
 						src="/storage/{{ $project->image }}"
 		     			alt="{{ $project->title }}"
 		     			>

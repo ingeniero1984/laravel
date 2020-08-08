@@ -5,7 +5,10 @@
         <div class="col-12 col-sm-10 col-lg-8 mx-auto">
             @if($project->image)
 
-            <img class="card-img-top" src="/storage/{{ $project->image }}" alt="{{ $project->title }}" />
+            <img class="card-img-top"
+                style="height: 150px; object-fit: cover"
+                src="/storage/{{ $project->image }}" 
+                alt="{{ $project->title }}" />
             @endif
 
             <div class="bg-white p-5 shadow rounded">

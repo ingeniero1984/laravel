@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SaveProjectRequest;
 
@@ -25,7 +26,6 @@ class ProjectController extends Controller
         ]);
     }
 
-
     public function show(Project $project) {
 
         return view('projects.show', [
@@ -35,20 +35,25 @@ class ProjectController extends Controller
         ]);
     }
 
-
     public function create() {
 
     	return view('projects.create');
     } 
 
-
     public function store(SaveProjectRequest $request) {
 
     	$project = new Project($request->validated());
 
-        $project->image = $request->file('image')->store('image');
+        $project->image = $request->file('image')->store('images');
 
         $project->save();
+
+        $image = Image::make(storage::get($project->image))
+            ->widen(600)
+            ->limitColors(255)
+            ->encode();
+
+        Storage::put($project->image, (string) $image);
 
     	return redirect()->route('projects.index')->with('toast_success', 'El proyecto fue creado correctamente.');
     }
@@ -73,9 +78,16 @@ class ProjectController extends Controller
 
             $project->fill($request->validated());
 
-            $project->image = $request->file('image')->store('image');
+            $project->image = $request->file('image')->store('images');
 
             $project->save();
+
+            $image = Image::make(storage::get($project->image))
+                ->widen(600)
+                ->limitColors(255)
+                ->encode();
+
+            Storage::put($project->image, (string) $image);
 
         } else {
 

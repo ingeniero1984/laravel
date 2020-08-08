@@ -15,7 +15,7 @@ class AddImageFieldToProjectsTable extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             
-            $table->string('image')->after('description')/*->nullable()*/;
+            $table->string('image')->after('description')->nullable();
 
         });
     }

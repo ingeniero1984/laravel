@@ -7,7 +7,7 @@
 		
 		<label for="titulo">Título del Proyecto</label>
 
-			<input class="form-control bg-light shadow-sm"
+			<input class="form-control bg-light shadow"
 					type="text"
 					id="title" 
 					name="title"
@@ -21,7 +21,7 @@
 		
 		<label for="url">Url</label>
 
-			<input class="form-control bg-light shadow-sm" 
+			<input class="form-control bg-light shadow" 
 					type="text" 
 					id="url" 
 					name="url"
@@ -35,7 +35,7 @@
 
 	<label>Descripción </label>
 
-		<textarea class="form-control bg-light shadow-sm"
+		<textarea class="form-control bg-light shadow"
 				id="description"
 				placeholder="Ingresa la descripción del proyecto..." 
 				name="description">{{ old('description', $project->description ?? '') }}
