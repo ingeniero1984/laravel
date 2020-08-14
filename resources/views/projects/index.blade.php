@@ -32,7 +32,7 @@
 
 						<img class="card-img-top"
 						style="height: 150px; object-fit: cover"
-						src="/storage/{{ $project->image }}"
+						src="{{ Storage::disk('projects')->url($project->image) }}"
 		     			alt="{{ $project->title }}"
 		     			>
 					@endif

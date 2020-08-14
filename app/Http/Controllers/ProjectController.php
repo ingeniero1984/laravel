@@ -44,16 +44,16 @@ class ProjectController extends Controller
 
     	$project = new Project($request->validated());
 
-        $project->image = $request->file('image')->store('images', 'public');
+        $project->image = $request->file('image')->store('', 'projects');
 
         $project->save();
 
-        $image = Image::make(storage::get($project->image, 'public'))
-            ->widen(600)
-            ->limitColors(255)
-            ->encode();
+        // $image = Image::make(storage::get($project->image, 'public'))
+        //     ->widen(600)
+        //     ->limitColors(255)
+        //     ->encode();
 
-        Storage::put($project->image, (string) $image);
+        // Storage::put($project->image, (string) $image);
 
     	return redirect()->route('projects.index')->with('toast_success', 'El proyecto fue creado correctamente.');
     }
@@ -74,20 +74,20 @@ class ProjectController extends Controller
 
         if($request->hasfile('image')) {
 
-            storage::delete($project->image);
+            Storage::disk('projects')->delete($project->image);
 
             $project->fill($request->validated());
 
-            $project->image = $request->file('image')->store('images', 'public');
+            $project->image = $request->file('image')->store('', 'projects');
 
             $project->save();
 
-            $image = Image::make(storage::get($project->image, 'public'))
-                ->widen(600)
-                ->limitColors(255)
-                ->encode();
+            // $image = Image::make(storage::get($project->image, 'public'))
+            //     ->widen(600)
+            //     ->limitColors(255)
+            //     ->encode();
 
-            Storage::put($project->image, (string) $image);
+            // Storage::put($project->image, (string) $image);
 
         } else {
 
@@ -102,7 +102,7 @@ class ProjectController extends Controller
 
     public function destroy(Project $project) {
 
-        storage::delete($project->image);
+        Storage::disk('projects')->delete($project->image);
 
     	$project->delete();
 
