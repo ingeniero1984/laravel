@@ -4,8 +4,9 @@
     <head>
         <meta charset="UTF-8" />
 
-        <title>@yield('title')</title>
+        <title>@yield('title') | Lermy Ferrer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Hola, Soy Lermy Ferrer Peralta Ingeniero de Sistemas de la Corporación Universitaria Latinoamericana (CUL) de Barranquilla - Colombia"/>
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}" />
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}"/>
         <script src="{{ mix('js/app.js') }}" type="text/javascript" async defer></script>
@@ -31,19 +32,19 @@
 
                             <div class="mb-2 flex-center">
                                 <!-- Twitter -->
-                                <a href="https://twitter.com/Lermyferrer" target="_blank" class="tw-ic">
+                                <a href="https://twitter.com/Lermyferrer" target="_blank" name="twitter" class="tw-ic">
                                     <i class="fab fa-twitter fa-lg  mr-md-3 mr-3"> </i>
                                 </a>
                                 <!--Linkedin -->
-                                <a href="https://www.linkedin.com/in/ing-lermy-ferrer-6a620668" target="_blank" class="li-ic">
+                                <a href="https://www.linkedin.com/in/ing-lermy-ferrer-6a620668" target="_blank" name="linkedin" class="li-ic">
                                     <i class="fab fa-linkedin fa-lg white-text mr-md-3 mr-3"> </i>
                                 </a>
                                 <!--correo-->
-                                <a href="mailto:ingeniero.lermy84@gmail.com" target="_blank" class="mail-ic">
+                                <a href="mailto:ingeniero.lermy84@gmail.com" target="_blank" name="mailto" class="mail-ic">
                                     <i class="fas fa-envelope fa-lg white-text mr-md-3 mr-3"> </i>
                                 </a>
                                 <!--github-->
-                                <a href="https://github.com/ingeniero1984" target="_blank" class="git-ic">
+                                <a href="https://github.com/ingeniero1984" target="_blank" name="github" class="git-ic">
                                     <i class="fab fa-github fa-lg white-text mr-md-3 mr-3"> </i>
                                 </a>
 
