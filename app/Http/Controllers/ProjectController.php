@@ -44,11 +44,11 @@ class ProjectController extends Controller
 
     	$project = new Project($request->validated());
 
-        $project->image = $request->file('image')->store('images');
+        $project->image = $request->file('image')->store('images', 'public');
 
         $project->save();
 
-        $image = Image::make(storage::get($project->image))
+        $image = Image::make(storage::get($project->image, 'public'))
             ->widen(600)
             ->limitColors(255)
             ->encode();
@@ -78,11 +78,11 @@ class ProjectController extends Controller
 
             $project->fill($request->validated());
 
-            $project->image = $request->file('image')->store('images');
+            $project->image = $request->file('image')->store('images', 'public');
 
             $project->save();
 
-            $image = Image::make(storage::get($project->image))
+            $image = Image::make(storage::get($project->image, 'public'))
                 ->widen(600)
                 ->limitColors(255)
                 ->encode();
